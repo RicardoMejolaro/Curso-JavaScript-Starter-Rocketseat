@@ -3,11 +3,11 @@ var selecionaLista = document.getElementById('resultado');
 var criaItemLista = document.createElement('li');
 
  
-  var procuraGitHub = document.getElementById('buscar').addEventListener('click', function() {
+  var procuraGitHub = document.getElementById('buscar').addEventListener('click', async function() {
     return new Promise(function(resolve, reject) {
         selecionaLista.innerHTML = '';
         mostrarCarregando();
-        setTimeout(() => {
+        setTimeout(function() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://api.github.com/users/' + usuario.value + '/repos');
         xhr.send(null);
